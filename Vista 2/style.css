@@ -76,7 +76,7 @@ h4 {
     justify-content: center;
 }
 
-footer {
+.footerpad {
     background: #020247;
 }
 
@@ -203,7 +203,7 @@ footer {
 }
 
 .slick-dots li button:hover:before, .slick-dots li button:focus:before{
-     opacity: .25;
+    opacity: .25;
 }
 
 .slick-dots li.slick-active button:hover:before, .slick-dots li.slick-active button:focus:before{
@@ -245,4 +245,12 @@ footer {
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+}
+
+.gap {
+    gap: 6rem;
+}
+
+.vector {
+    display: flex;
 }
