@@ -10,21 +10,24 @@ body {
     padding-right: 180px;
 }
 
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
 .maintitle {
     position: absolute;
-    left: 10%;
-    top: 10%;
+    padding-top: 2rem;
 }
 
 .titulo1 {
     color: #002EFF;
     font-weight: 600;
-    padding-top: 4rem;
     font-size: 48px;
 }
 
 .titulo2 {
-    margin-top: -15px;
+    margin-top: -25px;
     color: #002EFF;
     font-weight: 400;
     font-size: 48px;
@@ -34,13 +37,11 @@ body {
     width: 129.28px;
     height: 48px;
     position: absolute;
+    padding-top: 2rem;
 }
 
-.imagenfondo1 {
-    display: flex;
-    justify-content: flex-end;
-    align-content: flex-end;
-    align-items: flex-end;
+.margin {
+    margin-left: auto;
 }
 
 .middle {
@@ -60,11 +61,6 @@ body {
     max-width: 550px;
 }
 
-.ajuste{
-    padding-left: 11rem;
-    padding-top: 2rem;
-    padding-bottom: 1.2rem;
-}
 
 .flex-center {
     display: flex;
@@ -92,8 +88,8 @@ footer {
 .border {
     border: 1px solid #CCCCCC;
     border-radius: 10px;
-    padding-left: 10rem;
-    padding-right: 10rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
 .logo {
@@ -118,10 +114,13 @@ footer {
 }
 
 .imagen1 {
-    object-fit: fill;
     width: 600px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+}
+
+.imagenfondo1 {
+    display: flex;
 }
 
 /* NONE!!!! */
@@ -132,7 +131,7 @@ footer {
 
 @media (max-width: 600px) {
     .grid-platforms {
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
     }
 
     .middle {
@@ -141,12 +140,12 @@ footer {
 
     .barra {
         background-color: #020247;
-        width: 600px;
+        width: 100%;
         height: 70px;
     }
+
     .maintitle {
         left: 10%;
-        top: 15%;
     }
 
     .logomobile {
@@ -154,27 +153,27 @@ footer {
     }
 
     .mobileimg {
-        min-width: 600px;
-        margin-top: 200px;
+        width: 100%;
+        margin-top: 30%;
     }
 
     .titulomobil1 {
         display: block;
-        font-size: 35px;
+        font-size: 24px;
         font-weight: 400;
         color: #002EFF;
     }
 
     .titulomobil2 {
         display: block;
-        font-size: 35px;
+        font-size: 24px;
         font-weight: 600;
         color: #002EFF;
         margin-top: -20px;
     }
 
     .imagen1 {
-        width: 375px;
+        width: 100%;
         border-radius: 10px;
     }
 
@@ -184,24 +183,62 @@ footer {
     }
 
     .texto {
-        max-width: 325px;
-        padding: 0rem;
         font-size: 20px;
+        margin: auto;
         padding-bottom: 3rem;
     }
 
-    .middle {
-        max-width: 375px;
-    }
-
     .logofooter {
-        margin-top: 7rem;
-        margin-bottom: 7rem;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
     }
 
     /* NONE!!! */
     .titulo1 , .titulo2 , .vectorlogo,.copy {
         display: none;
     }
+
+    .ajuste {
+        padding-bottom: 0rem;
+    }
+
+    .container {
+        margin: 0 30px;
+    }
+
+    .imagenfondo1 {
+        flex-direction: column;
+    }
+
+    .margin {
+        margin: 0;
+    }
+
+    .slick-dots li.slick-active button:before{
+        color: #002EFF;;
+        opacity: 1;
+    }
+
+    .slick-dots li button:hover:before, .slick-dots li button:focus:before{
+         opacity: .25;
+    }
+
+    .slick-dots li.slick-active button:hover:before, .slick-dots li.slick-active button:focus:before{
+        opacity: 1;
+    }
+
+    /* .slick-dots li.slick-active button:before {
+        color: #002EFF;
+    } */
+
+    .slick-dots li button:before {
+        font-size: 15px;
+        margin-top: 1rem;
+    }
+
+    .footerpad {
+        margin-top: 4rem;
+    }
+
 
   }
