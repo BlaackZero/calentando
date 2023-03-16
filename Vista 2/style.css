@@ -78,6 +78,12 @@ h4 {
 
 .footerpad {
     background: #020247;
+    margin-top: 7rem;
+    height: 250px;
+}
+
+.logoresp {
+    padding-top: 3rem;
 }
 
 .copy {
@@ -101,6 +107,7 @@ h4 {
 	cursor:pointer;
 	color:#0004ef;
 	font-family:Arial;
+    font-weight: 600;
 	font-size:17px;
 	padding:12px 40px;
 	text-decoration:none;
@@ -124,6 +131,7 @@ h4 {
 
 .textoitem {
     font-size: 26px;
+    font-weight: 600;
     margin-left: 3rem;
 }
 
@@ -197,6 +205,7 @@ h4 {
     margin: 0 auto;
 }
 
+
 .slick-dots li.slick-active button:before{
     color: #002EFF;;
     opacity: 1;
@@ -253,4 +262,175 @@ h4 {
 
 .vector {
     display: flex;
+}
+
+.titulo1mobil {
+    display: none;
+}
+
+.titulo2mobil {
+    display: none;
+}
+
+.slick-dots {
+    bottom: -45px;
+}
+.textoa {
+    margin-top: 4rem;
+}
+
+.textob {
+    margin-top: 6rem;
+}
+
+.textod {
+    margin-top: 7rem;
+}
+
+.textoc {
+    margin-top: 7rem;
+}
+
+/* CSS RESPONSIVE 🤑🤑🤑 */
+
+
+@media (max-width: 600px) {
+    .barra {
+        background-color: #020247;
+        width: 100%;
+        height: 50px;
+    }
+
+    .logoresponsive {
+        position: relative;
+        width: 50%;
+    }
+
+    .titulo1 {
+        display: block;
+        font-weight: 400;
+        font-size: 24px;
+    }
+
+    .titulo2 {
+        display: block;
+        font-size: 24px;
+    }
+
+    .containerresp {
+        max-width: 600px;
+        left: 5%;
+    }
+
+    .titulom2mobil {
+        color: #002EFF;
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    .mobileimg {
+        width: 100%;
+        margin-top: 5rem;
+    }
+
+    .margin {
+        margin-left: inherit;
+    }
+    
+    .titulo2 {
+        display: none;
+    }
+
+    .titulo1 {
+        display: none;
+    }
+
+    .copy {
+        display: none;
+    }
+
+    .titulo1mobil {
+        padding-top: 0.5rem;
+        font-weight: 400;
+        color: #002EFF;
+        margin: 0 auto;
+        display: block;
+        font-size: 24px;
+    }
+
+    .titulo2mobil {
+        color: #002EFF;
+        margin: 0 auto;
+        display: block;
+        font-size: 24px;
+    }
+
+    .button {
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .containertitle {
+        max-width: 600px;
+        margin: 0 2rem 0 2rem;
+    }
+    
+    .footerpad {
+        height: 170px;
+    }
+
+    .logoresp {
+        padding-top: 2rem;
+    }
+
+    .compartir {
+        font-size: 24px;
+    }
+
+    .textoitem {
+        font-size: 24px;
+    }
+
+    .recforma {
+        position: static;
+        padding-bottom: 1rem;
+    }
+
+    .letraitem {
+        top: 0%;
+    }
+
+    .textoa {
+        margin: 0 auto;
+    }
+
+    .textob {
+        margin: 0 auto;
+        padding-bottom: 2rem;
+    }
+
+    .textoc {
+        margin: 0 auto;
+    }
+
+    .textod  {
+        margin: 0 auto;
+    }
+
+    .column {
+        flex-direction: column;
+    }
+
+    .none {
+        display: none;
+    }
+
+    .grid {
+        grid-template-columns: none;
+    }
+
+    .margtop {
+        margin-top: 6rem;
+    }
+    
 }
