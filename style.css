@@ -1,0 +1,67 @@
+html {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+body {
+    background-color: #353535;
+}
+
+.flexcolumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.colortexto {
+    color: #D2D7DF;
+}
+
+.card {
+    width: 250px;
+    height: 350px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    transition: transform .2s;
+}
+
+.centercolumn {
+    align-items: center
+}
+
+.enlaces {
+    padding-top: 2rem;
+}
+
+.padding-bt {
+    padding-bottom: 1rem;
+}
+
+
+a:hover {
+    color: #41EAD4;
+    font-weight: 700;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.titulo {
+    font-size: 22px;
+}
+
+.espaciado {
+    margin-bottom: 15rem;
+}
+

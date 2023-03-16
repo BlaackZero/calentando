@@ -15,6 +15,7 @@ h4 {
 
 .borderr {
     border-right: 1px solid #000000;
+    padding-right: 1rem;
 }
 
 .center {
