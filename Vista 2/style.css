@@ -13,6 +13,10 @@ h4 {
     margin: 0 auto;
 }
 
+.borderr {
+    border-right: 1px solid #000000;
+}
+
 .center {
     padding-left: 180px;
     padding-right: 180px;
@@ -240,8 +244,14 @@ h4 {
 
 .padding {
     padding-left: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+
+}
+
+.paddingbajo {
+    margin-top: 1rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+
 }
 
 .flex {
@@ -254,6 +264,7 @@ h4 {
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    padding-bottom: 3rem;
 }
 
 .gap {
@@ -432,5 +443,10 @@ h4 {
     .margtop {
         margin-top: 6rem;
     }
+
+    .borderr {
+        border-right: none;
+    }
+
     
 }
