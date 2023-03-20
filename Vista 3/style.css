@@ -1,0 +1,82 @@
+body {
+    font-family: 'Barlow', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-weight: 500;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+p {
+    margin: 0;
+    font-weight: 400;
+}
+
+h4 {
+    margin: 0 auto;
+}
+
+a {
+    font-weight: 500;
+    color: white;
+}
+
+/* CLASES PRED */
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* CLASES PROPIAS */
+
+.container {
+    padding-left: 308px;
+    padding-right: 308px;
+}
+
+.top-bar {
+    width: 100%;
+    height: 100px;
+    background-color: #002EFF;
+}
+
+.padd-top {
+    padding: 1rem;
+}
+
+.a-nodef {
+    text-decoration: none;
+}
+
+.gap {
+    display: flex;
+    gap: 2rem;
+}
+
+.space {
+    justify-content: space-between;
+}
+
+.title {
+    padding-top: 80px;
+    font-size: 30px;
+}
+
+.sub {
+    padding-top: 40px;
+}
+
+.azul {
+    color: #002EFF;
+}
