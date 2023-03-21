@@ -34,6 +34,17 @@ a {
     font-size: 18px;
 }
 
+input {
+    font-size: 18px;
+}
+
+select {
+    font-size: 18px;
+}
+
+option {
+    font-size: 18px;
+}
 /* CLASES PRED */
 
 .flex {
@@ -140,8 +151,14 @@ a {
 .boton {
     width: 255px;
     height: 45px;
+    font-size: 14px;
     background: #FF3D00;
     border-radius: 22.5px;
+    border: none;
+    color: #ffffff;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .center {

@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,13 +41,13 @@
             <div>
                 <h4>Nombre y apellido</h4>
                 <div class="minuspadd">
-                    <input class="inputx" type="text" placeholder="">
+                    <input id="nombre" class="inputx" type="text" placeholder="">
                 </div>
             </div>
             <div>
                 <h4>Rut vendedor</h4>
                 <div class="minuspadd">
-                    <input class="inputz" type="text" placeholder="">
+                    <input id="rut" class="inputz" type="text" placeholder="">
                 </div>
             </div>
         </div>
@@ -54,37 +56,53 @@
     <div class="container">
         <h3 class="sub azul">Datos del Vehiculo:</h3>
     </div>
-    <div class="container">
-        <div class="flex gap separacion flex-column">
-            <div>
-                <h4>Patente vehiculo</h4>
-                <div class="minuspadd">
-                    <input class="inputz" type="text" placeholder="">
+    <form id="formulario">
+        <div class="container">
+            <div class="flex gap separacion flex-column">
+                <div>
+                    <h4>Patente vehiculo</h4>
+                    <div class="minuspadd">
+                        <input id="patente" maxlength="6" class="inputz" type="text" placeholder="" onchange="formatPatente()">
+                    </div>
+                </div>
+                <div>
+                    <h4 class="paddingbot">Marca Vehiculo</h4>
+                    <select class="select" name="" id="marca">
+                        <option value="" disabled selected></option>
+                    </select>
+                </div>
+                <div>
+                    <h4 class="paddingbot">Modelo Vehiculo</h4>
+                    <select disabled class="select" name="" id="modelo">
+                        <option value="0" disabled></option>
+                    </select>
                 </div>
             </div>
-            <div>
-                <h4 class="paddingbot">Marca Vehiculo</h4>
-                <select class="select" name="" id=""></select>
-            </div>
-            <div>
-                <h4 class="paddingbot">Modelo Vehiculo</h4>
-                <select class="select" name="" id=""></select>
-            </div>
-        </div>
-        <div class="">
-            <div>
-                <h4 class="paddingbot">Color Vehiculo</h4>
-                <select class="select" name="" id=""></select>
-            </div>
-        </div>
-        <div class="line"></div>
-        <div class="flex-btn flex-column">
-            <div class="boton padding-btn">
-                <div class="flex-center">
-                    <a class="center a-nodef" href="">Enviar</a>
+            <div class="">
+                <div>
+                    <h4 class="paddingbot">Color Vehiculo</h4>
+                    <select disabled class="select" name="" id="color">
+                        <option value="0" disabled selected></option>
+                    </select>
                 </div>
             </div>
+            <div class="line"></div>
+            <div class="flex-btn flex-column">
+                <button type="button" id="botonform" class="boton padding-btn">
+                        Enviar
+                </button>
+            </div>
         </div>
-    </div>
+    </form>
+    <button onclick="limpiarlocal()">
+        LIMPIAR
+    </button>
+    <button onclick="mostrarlocal()">
+        MOSTRAR
+    </button>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
