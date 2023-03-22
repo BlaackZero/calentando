@@ -1,3 +1,4 @@
+
 let marcaVeh = [
     {id:1, name:"Suzuki"},
     {id:2, name:"Subaru"}
@@ -17,8 +18,14 @@ let colorVeh = [
     {id:4, name:"Verde"},
 ]
 
+let resultForm = []
+
+let dataLS = []
+
 let form = document.getElementById('formulario');
 
+
+let datatable = document.getElementById('table');
 let boton = document.getElementById('botonform');
 let patenteInput = document.getElementById('patente');
 let marcaSelect = document.getElementById('marca');
@@ -63,7 +70,9 @@ function cargarModelosVeh(){
 boton.addEventListener("click", function(e){
 
     let error = 0
-    
+
+    //agregarle a resultados un id numerico que sume +1
+
     let resultados = {
         nombre: nombre.value,
         rut: rut.value,
@@ -84,8 +93,9 @@ boton.addEventListener("click", function(e){
     }
 
     if(error == 0){
-        localStorage.setItem('datos', JSON.stringify(resultados))
-        console.log("Resultados Log",resultados);
+        resultForm.push(resultados)
+        localStorage.setItem('datos', JSON.stringify(resultForm))
+
     }
     else{
         Toastify({
@@ -99,19 +109,10 @@ boton.addEventListener("click", function(e){
     }
 })
 
-function mostrarlocal() {
-    console.log("Mostrando");
-    console.log(localStorage);
-    console.log(caracPatentes);
-}
-
-
 function limpiarlocal() {
-    console.log("Limpiando...");
     localStorage.removeItem('datos');
     console.log(localStorage);
 }
-
 
 // input de patente patenteInput
 
@@ -126,5 +127,33 @@ const formatPatente = () => {
     }
 }
 
+function traerData() {
+    dataLS = JSON.parse(localStorage.getItem('datos'));
+    console.log(dataLS);
+    let formatotabla = ''
+
+    dataLS.forEach((item)=> {
+        formatotabla += `<tr>
+        <button id="1" onclick="eliminarReg(this.id)">Eliminar</button>
+        <button onclick="editarReg()">Editar</button>
+
+        <td>${item.nombre}</td>
+        <td>${item.rut}</td>
+        <td>${item.patente}</td>
+        <td>${item.marca}</td>
+        <td>${item.modelo}</td>
+        <td>${item.color}</td>
+    </tr>`
+    })
+    datatable.innerHTML = formatotabla
+}
+
+function eliminarReg(idreg) {
+    console.log(idreg);
+}
+
+function editarReg() {
+    console.log("Editar");
+}
 
 

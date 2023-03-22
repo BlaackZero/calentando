@@ -97,9 +97,20 @@
     <button onclick="limpiarlocal()">
         LIMPIAR
     </button>
-    <button onclick="mostrarlocal()">
-        MOSTRAR
-    </button>
+    <div>
+        <table>
+            <thead>
+                <th>Nombre</th>
+                <th>Rut</th>
+                <th>Patente</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Color</th>
+            </thead>
+            <tbody id="table">
+            </tbody>
+            </table>
+    </div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
