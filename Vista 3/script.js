@@ -150,7 +150,7 @@ function traerData() {
 
     let formatotabla = ''
 
-    formatotabla = `<table id="myTable">
+    formatotabla = `<table id="myTable" class="tabla">
     <thead>
         <th>Nombre</th>
         <th>Rut</th>
@@ -275,6 +275,12 @@ function limpiarCampos() {
     modeloSelect.value = "";
 }
 
+
+function log(){
+    console.log("💕");
+
+    tablageneral.style.visibility="visible";
+}
 
 
 

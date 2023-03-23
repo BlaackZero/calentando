@@ -193,6 +193,20 @@ select {
     margin-bottom: 3rem;
 }
 
+.tabla {
+    visibility: hidden;
+}
+
+.botona {
+    font-family: 'Barlow', sans-serif;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    background: transparent;
+    border: none;
+}
+
 
 /* CSS RESPONSIVE 🤑🤑🤑 */
 
