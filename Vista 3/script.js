@@ -1,3 +1,13 @@
+window.onload = (event) => {
+    traerData()
+    let LocalCache = []
+    LocalCache = JSON.parse(localStorage.getItem('datos'));
+        if(LocalCache.length > 0){
+            resultForm = LocalCache
+            console.log(resultForm);
+        }
+    
+  };
 
 let marcaVeh = [
     {id:1, name:"Suzuki"},
@@ -22,9 +32,15 @@ let resultForm = []
 
 let dataLS = []
 
+let localDelete = []
+
 let form = document.getElementById('formulario');
 
+let tablageneral = document.getElementById('tablageneral');
 
+let contBoton = document.getElementById('contenedoractualizar')
+let inputrut = document.getElementById('rut')
+let inputnombre = document.getElementById('nombre')
 let datatable = document.getElementById('table');
 let boton = document.getElementById('botonform');
 let patenteInput = document.getElementById('patente');
@@ -71,8 +87,6 @@ boton.addEventListener("click", function(e){
 
     let error = 0
 
-    //agregarle a resultados un id numerico que sume +1
-
     let resultados = {
         nombre: nombre.value,
         rut: rut.value,
@@ -91,15 +105,20 @@ boton.addEventListener("click", function(e){
     if(patente.value==''){
         error++
     }
+    if(color.value==''){
+        error++
+    }
 
     if(error == 0){
         resultForm.push(resultados)
         localStorage.setItem('datos', JSON.stringify(resultForm))
+        traerData()
+        limpiarCampos()
 
     }
     else{
         Toastify({
-            text: "ERROR else",
+            text: "ERROR",
             duration: 2500,
             style: {
                 background: "red",
@@ -109,10 +128,6 @@ boton.addEventListener("click", function(e){
     }
 })
 
-function limpiarlocal() {
-    localStorage.removeItem('datos');
-    console.log(localStorage);
-}
 
 // input de patente patenteInput
 
@@ -128,32 +143,138 @@ const formatPatente = () => {
 }
 
 function traerData() {
+
     dataLS = JSON.parse(localStorage.getItem('datos'));
-    console.log(dataLS);
+
+    document.getElementById("botonact").style.display="block";
+
     let formatotabla = ''
 
-    dataLS.forEach((item)=> {
-        formatotabla += `<tr>
-        <button id="1" onclick="eliminarReg(this.id)">Eliminar</button>
-        <button onclick="editarReg()">Editar</button>
+    formatotabla = `<table id="myTable">
+    <thead>
+        <th>Nombre</th>
+        <th>Rut</th>
+        <th>Patente</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Color</th>
+        <th>Eliminar</th>
+        <th>Editar</th>
+    </thead>
+    <tbody id="table">`
 
+    dataLS.forEach((item, index)=> {
+        formatotabla += `
+        <tr>
         <td>${item.nombre}</td>
         <td>${item.rut}</td>
         <td>${item.patente}</td>
         <td>${item.marca}</td>
         <td>${item.modelo}</td>
         <td>${item.color}</td>
+        <td>
+        <button type="button" id="botonform" class="" onclick="editarReg(${index})">
+        Editar
+        </button>
+        </td>
+        <td>
+        <button type="button" id="botonform" class="" onclick="eliminarReg(${index})">
+        Eliminar
+        </button>
+        </td>
     </tr>`
     })
-    datatable.innerHTML = formatotabla
+
+    formatotabla += `</tbody>
+    </table>`
+
+    tablageneral.innerHTML = formatotabla
+
+    let table = new DataTable('#myTable', {
+    
+    });
+
 }
 
 function eliminarReg(idreg) {
-    console.log(idreg);
+
+    dataLS.splice(idreg,1)
+
+    localStorage.setItem('datos', JSON.stringify(dataLS))
+    console.log(localDelete);
+    localDelete = JSON.parse(localStorage.getItem('datos'));
+    resultForm = localDelete
+    console.log(resultForm);
+    traerData()
+
 }
 
-function editarReg() {
-    console.log("Editar");
+
+function editarReg(idreg) {
+
+    document.getElementById("botonform").style.display="none";
+
+    let seleccion = dataLS[idreg];
+
+    patenteInput.value = seleccion.patente
+    marcaSelect.value = seleccion.marca
+    inputnombre.value = seleccion.nombre
+    colorSelect.value = seleccion.color
+    inputrut.value = seleccion.rut
+    cargarModelosVeh()
+    modeloSelect.value = seleccion.modelo
+
+    let formatoboton = ''
+
+    formatoboton = `<button type="button" id="botonAct" class="boton padding-btn" onclick="editdelete(${idreg})">
+                    Actualizar
+                    </button>`
+
+    contBoton.innerHTML = formatoboton
+    
+
 }
+
+function editdelete(idreg) {
+
+    dataLS.splice(idreg,1)
+    console.log("Splice",dataLS);
+
+    let resultados = {
+        nombre: nombre.value,
+        rut: rut.value,
+        patente: patente.value,
+        marca: marca.value,
+        modelo: modelo.value,
+        color: color.value
+    }
+
+    console.log(resultados);
+    
+    dataLS.push(resultados)
+
+    console.log(dataLS);
+
+    localStorage.setItem('datos', JSON.stringify(dataLS))
+
+    traerData()
+    document.getElementById("botonform").style.display="block";
+    document.getElementById("botonAct").style.display="none";
+    limpiarCampos()
+
+}
+
+
+function limpiarCampos() {
+    console.log("Limpiando");
+    patenteInput.value = "";
+    marcaSelect.value = "";
+    inputnombre.value = "";
+    colorSelect.value = "";
+    inputrut.value = "";
+    modeloSelect.value = "";
+}
+
+
 
 

@@ -175,10 +175,24 @@ option {
     flex-direction: row-reverse;
 }
 
+.block {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
 select {
     color: #002EFF;
     width: 100px;
 }
+
+.margtable {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
 
 /* CSS RESPONSIVE 🤑🤑🤑 */
 
