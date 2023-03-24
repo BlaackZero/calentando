@@ -303,6 +303,14 @@ h4 {
     margin-top: 7rem;
 }
 
+.grid-botone {
+    display: grid;
+}
+
+.buscar-inp {
+    margin: 0 0;
+}
+
 /* CSS RESPONSIVE 🤑🤑🤑 */
 
 

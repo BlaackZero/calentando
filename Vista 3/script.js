@@ -9,6 +9,9 @@ window.onload = (event) => {
     
   };
 
+
+
+
 let marcaVeh = [
     {id:1, name:"Suzuki"},
     {id:2, name:"Subaru"}
@@ -118,10 +121,10 @@ boton.addEventListener("click", function(e){
     }
     else{
         Toastify({
-            text: "ERROR",
+            text: "Rellena todos los campos",
             duration: 2500,
             style: {
-                background: "red",
+                background: "orange",
               },
             close: true
             }).showToast();
@@ -277,9 +280,7 @@ function limpiarCampos() {
 
 
 function log(){
-    console.log("💕");
-
-    tablageneral.style.visibility="visible";
+    console.log("😎😋");
 }
 
 
