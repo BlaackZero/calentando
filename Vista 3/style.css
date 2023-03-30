@@ -204,6 +204,24 @@ select {
     border: none;
 }
 
+.btncancel {
+    width: 45px;
+    height: 45px;
+    font-size: 14px;
+    background: white;
+    border-radius: 100%;
+    border: 2px solid #FF3D00;
+    color:#FF3D00;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.divcancel {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 /* CSS RESPONSIVE 🤑🤑🤑 */
 
 @media (max-width: 600px) {
